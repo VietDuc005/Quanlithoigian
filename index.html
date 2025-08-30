@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Thời Gian Pro</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Quản Lý Thời Gian Pro</h1>
+
+        <div class="grid">
+            <!-- Stopwatch -->
+            <div class="card">
+                <h2>⏱️ Bấm Giờ</h2>
+                <div class="timer-display" id="stopwatch-display">00:00:00</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="stopwatch-progress" style="width: 0%"></div>
+                </div>
+                <div class="controls">
+                    <button id="start-stopwatch">▶️ Bắt Đầu</button>
+                    <button class="pause" id="pause-stopwatch">⏸️ Tạm Dừng</button>
+                    <button class="reset" id="reset-stopwatch">🔄 Reset</button>
+                </div>
+            </div>
+
+            <!-- Timer -->
+            <div class="card">
+                <h2>⏰ Hẹn Giờ</h2>
+                <div class="input-group">
+                    <input type="number" id="timer-minutes" placeholder="Phút" min="0" max="59" value="10">
+                    <input type="number" id="timer-seconds" placeholder="Giây" min="0" max="59" value="0">
+                </div>
+                <div class="timer-display" id="timer-display">10:00</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="timer-progress" style="width: 100%"></div>
+                </div>
+                <div class="controls">
+                    <button id="start-timer">▶️ Bắt Đầu</button>
+                    <button class="pause" id="pause-timer">⏸️ Tạm Dừng</button>
+                    <button class="reset" id="reset-timer">🔄 Reset</button>
+                </div>
+            </div>
+
+            <!-- Pomodoro -->
+            <div class="card">
+                <h2>🍅 Pomodoro</h2>
+                <div class="input-group">
+                    <input type="number" id="work-minutes" placeholder="Làm việc" value="25" min="1">
+                    <input type="number" id="break-minutes" placeholder="Nghỉ" value="5" min="1">
+                </div>
+                <div class="timer-display" id="pomodoro-display">25:00</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="pomodoro-progress" style="width: 100%"></div>
+                </div>
+                <div class="status" id="pomodoro-status">🎯 Sẵn sàng làm việc</div>
+                <div class="controls">
+                    <button id="start-pomodoro">▶️ Bắt Đầu</button>
+                    <button class="pause" id="pause-pomodoro">⏸️ Tạm Dừng</button>
+                    <button class="reset" id="reset-pomodoro">🔄 Reset</button>
+                </div>
+            </div>
+
+            <!-- Tasks -->
+            <div class="card">
+                <h2>✅ Công Việc</h2>
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Nhập công việc mới..." style="flex: 1;">
+                    <button id="add-task">➕ Thêm</button>
+                </div>
+                <ul class="task-list" id="task-list"></ul>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="card">
+            <h2>📈 Thống Kê</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" id="total-stopwatch">0</span>
+                    <div class="stat-label">Phút bấm giờ</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-work">0</span>
+                    <div class="stat-label">Phút làm việc</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-break">0</span>
+                    <div class="stat-label">Phút nghỉ</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="completed-tasks">0</span>
+                    <div class="stat-label">Công việc hoàn thành</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+<script src="index.js"></script>
+</body>
+</html>
